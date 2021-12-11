@@ -1,8 +1,4 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
   <router-view />
 </template>
 
@@ -26,5 +22,26 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+/*Fondo oscuro y linterna*/
+.adventure {
+  cursor: none;
+  --cursorX: 50vw;
+  --cursorY: 50vh;
+}
+.adventure:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 12vmax at var(--cursorX) var(--cursorY),
+    /*diametro de la luz*/ rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 80%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
 }
 </style>

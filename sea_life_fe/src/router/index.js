@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../components/Home.vue'
-import Adventure from '../components/Adventure.vue'
+import Adventure from '../view/AdventureView.vue'
 
 const routes = [
   {
