@@ -1,56 +1,28 @@
 <template>
-  <section>
-    <!--Auto inicio del video de fondo-->
-    <video autoplay muted loop id="myVideo">
-      <source src="../assets/video/hack1.mp4" />
-    </video>
-
-    <!--Autoinicio del audio-->
-    <audio controls autoplay loop>
-      <source
-        src="../assets/audio/scuba-divers-copy.ogg"
-        type="audio/ogg"
-        style="pointer-events: auto"
-      />
-    </audio>
-
-    <article>
-      <div class="bienvenida">
-        <!--<h1>Bienvenido Janfry</h1>-->
-        <a href="#"></a>
-      </div>
-
-      <a href="coral_adv.html">
-        <img src="../assets/img/coral_adv.jpeg" div id="circle1"
-      /></a>
-      <a href="caves_adv.html">
-        <img src="../assets/img/caves_adv.jpeg" div id="circle2"
-      /></a>
-      <a href="whales_adv.html">
-        <img src="../assets/img/whales_adv.jpeg" div id="circle3"
-      /></a>
-    </article>
-  </section>
+  <article>
+    <a @click="play(1)">
+      <img src="../assets/img/coral_adv.jpeg" div id="circle1"
+    /></a>
+    <a @click="play(2)">
+      <img src="../assets/img/caves_adv.jpeg" div id="circle2"
+    /></a>
+    <a @click="play(3)">
+      <img src="../assets/img/whales_adv.jpeg" div id="circle3"
+    /></a>
+  </article>
 </template>
 <script>
 export default {
   name: "Adventure",
   data: function () {},
   methods: {
-    updateCursor: function (e) {
-      let x = e.clientX || e.touches.clientX;
-      let y = e.clientY || e.touches.clientY;
-      document.documentElement.style.setProperty("--cursorX", x + "px");
-      document.documentElement.style.setProperty("--cursorY", y + "px");
+    play: function (value) {
+      this.$emit("loadPlay", value);
     },
-  },
-  created() {
-    document.addEventListener("mousemove", this.updateCursor);
-    document.addEventListener("touchmove", this.updateCursor);
   },
 };
 </script>
-<style>
+<style scoped>
 /*titulo*/
 .bienvenida img {
   width: 50px;

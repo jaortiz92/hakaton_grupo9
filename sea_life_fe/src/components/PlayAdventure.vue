@@ -1,65 +1,134 @@
 <template>
-  <img src="zocalo.png" /> <img src="../assets/img/zocalo.png" /><img
-    src="../assets/img/zocalo.png"
-  />
-
-  <div class="bienvenida">
-    <!--<h1>Bienvenido Janfry</h1>-->
-    <a href="#"></a>
-  </div>
-
-  <a href="#coral"> <img src="../assets/img/2.png" div id="circle1" /></a>
-  <a href="#cardumen"> <img src="../assets/img/3.png" div id="circle2" /></a>
-  <a href="#pez_amarillo">
-    <img src="../assets/img/4.png" div id="circle3"
-  /></a>
-  <a href="#pez_rayado"> <img src="../assets/img/5.png" div id="circle4" /></a>
-  <a href="#vidrio"> <img src="../assets/img/6.png" div id="circle5" /></a>
-  <a href="#bag"> <img src="../assets/img/bag.png" div id="circle6" /></a>
-  <a href="#bag"> <img src="../assets/img/gris-azul.png" div id="circle7" /></a>
-  <a href="#tropical">
-    <img src="../assets/img/tropical.png" div id="circle8"
-  /></a>
-  <a href="#tropical"> <img src="../assets/img/9.png" div id="circle9" /></a>
+  <article>
+    <div v-for="index in 8" :key="index">
+      <img
+        :src="require(`../assets/img/${items[index - 1].description}`)"
+        div
+        :id="`circle${index}`"
+      />
+    </div>
+  </article>
 </template>
 <script>
 export default {
   name: "PlayAdventure",
-  data: function () {},
+  data: function () {
+    return {
+      items: [
+        {
+          name: "Ballena azul",
+          description: "ballena_azul.png",
+          type: 1,
+        },
+        {
+          name: "Ballena gris",
+          description: "ballena_gris.png",
+          type: 1,
+        },
+        {
+          name: "Ballena jorobada",
+          description: "ballena_jorobada.png",
+          type: 1,
+        },
+        {
+          name: "Betta",
+          description: "betta.png",
+          type: 1,
+        },
+        {
+          name: "Cachalote",
+          description: "cachalote.png",
+          type: 1,
+        },
+        {
+          name: "Koral",
+          description: "koral.png",
+          type: 1,
+        },
+        {
+          name: "Idolo moro",
+          description: "Idolo_moro.png",
+          type: 1,
+        },
+        {
+          name: "Mandarin drag",
+          description: "mandarin_drag.png",
+          type: 1,
+        },
+      ],
+    };
+  },
 };
 </script>
-<style>
+<style scoped>
+/*Animación items*/
+/*titulo*/
+.bienvenida img {
+  width: 50px;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 47%;
+}
+
+h1 {
+  color: yellow;
+  font-size: 70px;
+  font-family: sans-serif;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 200;
+}
+/*End Titulo*/
+
+/*zocalo*/
+
+img {
+  opacity: 0.9;
+  width: 1450px;
+  height: 800px;
+  position: fixed;
+  display: inline;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 /*Animación items*/
 article img {
   opacity: 0.01;
   padding: 80;
-  width: 10px; /*Ancho inicial*/
-  height: 10px;
+  width: 70px; /*Ancho inicial*/
+  height: 70px;
   padding: 40px;
   transition: width 3s, height 3s, transform 2s; /*Cambia el ancho inicial al ancho en hover*/
   z-index: 999;
+  border-radius: 50%;
 }
 
 article img:hover {
   opacity: 1;
   padding: 80px;
-  width: 250px; /*ancho final*/
-  height: 250px;
+  width: 400px; /*ancho final*/
+  height: 400px;
   transform: rotate(360deg); /*gira la imagen una vuelta completa*/
   z-index: 999;
+  border-radius: 50%;
 }
 
 article img:hover:after {
-  content: url(image/circle.PNG); /* no need for quotes */
   opacity: 1;
+  border-radius: 50%;
 }
 
 #circle1 {
   position: absolute;
   top: 33%;
   left: 2%;
-  -ms-transform: skewY(20deg); /* IE 9 */
-  transform: skewY(20deg);
 }
 
 #circle2 {
@@ -79,8 +148,8 @@ article img:hover:after {
 }
 #circle5 {
   position: absolute;
-  top: 65%;
-  left: 52%;
+  top: 50%;
+  left: 74%;
 }
 #circle6 {
   position: absolute;

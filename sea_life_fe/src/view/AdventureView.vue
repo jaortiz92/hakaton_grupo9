@@ -1,11 +1,26 @@
 <template>
   <div class="adventureView">
-    <div v-if="is_selecting">
-      <Adventure></Adventure>
-    </div>
-    <div v-if!="is_selecting">
-      <PlayAdventure></PlayAdventure>
-    </div>
+    <section>
+      <video autoplay muted loop id="myVideo">
+        <source src="../assets/video/hack1.mp4" />
+      </video>
+
+      <!--Autoinicio del audio-->
+      <audio controls autoplay loop>
+        <source
+          src="../assets/audio/scuba-divers-copy.ogg"
+          type="audio/ogg"
+          style="pointer-events: auto"
+        />
+      </audio>
+
+      <div v-if="is_selecting">
+        <Adventure v-on:loadPlay="loadPlay"></Adventure>
+      </div>
+      <div v-else>
+        <PlayAdventure></PlayAdventure>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -25,6 +40,10 @@ export default {
     PlayAdventure,
   },
   methods: {
+    loadPlay: function () {
+      this.is_selecting = false;
+      localStorage.setItem("game", value);
+    },
     updateCursor: function (e) {
       let x = e.clientX || e.touches.clientX;
       let y = e.clientY || e.touches.clientY;
@@ -32,7 +51,7 @@ export default {
       document.documentElement.style.setProperty("--cursorY", y + "px");
     },
   },
-  updated() {
+  created() {
     document.addEventListener("mousemove", this.updateCursor);
     document.addEventListener("touchmove", this.updateCursor);
   },
