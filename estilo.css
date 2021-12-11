@@ -1,0 +1,146 @@
+* {
+  margen :  0 ;
+  acolchado :  0 ;
+  de caja de tamaño : frontera-box;
+  familia de fuentes :  'Roboto' , sans-serif;
+}
+ 
+cuerpo {
+  fondo :  # f1f1f1 ;
+  fondo :  url (imagen.jpg);
+}
+ 
+. contenedor {
+  ancho :  100 % ;
+  altura :  100 vh ;
+  relleno :  10 px ;
+  pantalla : flex;
+  justificar-contenido : centro;
+  alinear-elementos : centro;
+}
+ 
+. contenedor de inicio de sesión {
+  pantalla : flex;
+  ancho :  650 px ;
+  altura : auto;
+  fondo :  # fff ;
+  caja-sombra :  0  1 px  1 px  0  rgba ( 0 ,  0 ,  0 ,  .2 );
+}
+ 
+. registrarse , . iniciar sesión {
+  flexión :  1 ;
+}
+ 
+. registrarse {
+  relleno :  40 px ;
+  posición : relativa;
+}
+ 
+. registrarse  h2 {
+  color :  # 797979 ;
+  margen inferior :  30 px ;
+}
+ 
+. registrar  entrada {
+  ancho :  100 % ;
+  relleno :  5 px ;
+  tamaño de fuente :  16 px ;
+  margen inferior :  25 px ;
+  border-top-style : ninguno;
+  border-left-style : ninguno;
+  border-right-style : ninguno;
+  borde inferior :  1 px sólido # a8a8a8 ;
+  color :  # 333 ;
+}
+ 
+. registro de  entrada : activo ,
+. registrar  entrada : focus {
+  esquema : ninguno;
+}
+ 
+. registrarse . enviar {
+  ancho : auto;
+  relleno :  10 px ;
+  fondo :  # f17108 ;
+  color :  # fff ;
+  tamaño de fuente :  12 px ;
+  caja-sombra :  0  0  3 px  0  rgba ( 0 ,  0 ,  0 ,  .2 );
+  cursor : puntero;
+}
+ 
+. registrarse :: después de {
+  contenido :  '' ;
+  posición : absoluta;
+  ancho :  25 px ;
+  altura :  25 px ;
+  arriba :  50 % ;
+  derecha :  -23 px ;
+  relleno :  10 px ;
+  alineación de texto : centro;
+  tamaño de fuente :  19 px ;
+  fondo :  # f1f1f1 ;
+  radio de borde :  50 % ;
+  transformar :  translateY ( -50 % );
+  caja-sombra :  -1 px  1 px  3 px  1 px  rgba ( 0 ,  0 ,  0 ,  .2 );
+  color :  # 7c7c7c ;
+}
+ 
+. iniciar sesión {
+  imagen de fondo :  degradado lineal (abajo a la derecha ,  # 1ab6b6 ,  # 4cac6e );
+  relleno :  40 px ;
+}
+ 
+. login  h2 {
+  color :  # fff ;
+  margen inferior :  45 px ;
+}
+ 
+. botón de inicio de sesión  i { 
+  posición : absoluta;
+  superior :  12 px ;
+  izquierda :  12 px ;
+}
+ 
+. botón de inicio de sesión  {
+  ancho :  100 % ;
+  margen :  15 px  0 px ;
+  relleno :  10 px ;
+  caja-sombra :  0  0  3 px  0  rgba ( 0 ,  0 ,  0 ,  .2 );
+  cursor : puntero;
+  posición : relativa;
+}
+ 
+. iniciar sesión . fb {
+  fondo :  # 3b5999 ;
+  estilo de borde : ninguno;
+  color :  # fff ;
+}
+ 
+. iniciar sesión . tw {
+  fondo :  # 55acef ;
+  estilo de borde : ninguno;
+  color :  # fff ;
+}
+ 
+. iniciar sesión . correo {
+  fondo :  # 33d4ce ;
+  estilo de borde : ninguno;
+  color :  # fff ;
+}
+ 
+@media  solo pantalla y ( ancho máximo :  540 px ) {
+  . contenedor de inicio de sesión {
+    pantalla : bloque;
+  }
+ 
+  . registrarse , . iniciar sesión {
+    flex : ninguno;
+  }
+ 
+  . registrarse :: después de {
+    arriba : desarmado;
+    abajo :  -25 px ;
+    izquierda :  50 % ;
+    transformar :  translateX ( -50 % ) rotar ( 90 grados );
+  }
+}
