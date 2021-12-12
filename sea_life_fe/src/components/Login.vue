@@ -3,6 +3,7 @@
     <div class="login-container">
       <div class="login">
         <h2>Login</h2>
+        <hr />
         <div class="login-items">
           <form v-on:submit.prevent="logInUser">
             <input

@@ -1,17 +1,25 @@
 <template>
   <div>
     <Navbar></Navbar>
-    <Login @completedLogIn="completedLogIn"></Login>
+    <Signup v-if="pag" @completedSignUp="completedSignUp"></Signup>
+    <Login v-else @completedLogIn="completedLogIn"></Login>
   </div>
 </template>
 <script>
 import Navbar from "@/components/Navbar";
-import Login from "@/components/LoginComponent";
+import Login from "@/components/Login";
+import Signup from "@/components/Signup";
 export default {
   name: "login",
+  data: function () {
+    return {
+      pag: false,
+    };
+  },
   components: {
     Navbar,
     Login,
+    Signup,
   },
   methods: {
     completedLogIn: function (data) {
@@ -21,6 +29,14 @@ export default {
       localStorage.setItem("token_refresh", data.token_refresh);
       alert("Autenticación Exitosa");
     },
+    completedSignUp: function (data) {
+      alert("Registro Exitoso");
+      this.completedLogIn(data);
+    },
+  },
+  created() {
+    if (localStorage.getItem("pagUser") === "new") this.pag = true;
+    else this.pag = false;
   },
 };
 </script>
