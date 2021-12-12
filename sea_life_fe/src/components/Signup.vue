@@ -61,9 +61,13 @@ export default {
     signInUser: function () {
       this.user.rol = parseInt(this.user.rol, 10);
       axios
-        .post("https://sealife-auth.herokuapp.com/user/", this.user, {
-          headers: {},
-        })
+        .post(
+          "https://hackaton-g9-mintic-auth-ms.herokuapp.com/user/",
+          this.user,
+          {
+            headers: {},
+          }
+        )
         .then((result) => {
           let dataSignUp = {
             email: this.user.email,

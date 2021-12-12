@@ -38,9 +38,13 @@ export default {
   methods: {
     logInUser: async function () {
       await axios
-        .post("https://sealife-auth.herokuapp.com/login/", this.user, {
-          headers: {},
-        })
+        .post(
+          "https://hackaton-g9-mintic-auth-ms.herokuapp.com/login/",
+          this.user,
+          {
+            headers: {},
+          }
+        )
         .then((result) => {
           let dataLogIn = {
             username: this.user.username,
