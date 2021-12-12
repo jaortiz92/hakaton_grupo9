@@ -11,6 +11,7 @@
     <ul>
       <li><a class="active" href="#">Inicio</a></li>
       <li><a @click="loadLogin">Log In</a></li>
+      <li><a @click="loadSignup">Sign Up</a></li>
     </ul>
   </nav>
 </template>
@@ -24,7 +25,12 @@ export default {
   },
   methods: {
     loadLogin: function () {
-      this.$router.push({ name: "Login" });
+      localStorage.setItem("pagUser", "old");
+      this.$router.push({ name: "User" });
+    },
+    loadSignup: function () {
+      localStorage.setItem("pagUser", "new");
+      this.$router.push({ name: "User" });
     },
     updateLogin: function () {
       if (localStorage.getItem("isAuth") == "true") this.status = true;
