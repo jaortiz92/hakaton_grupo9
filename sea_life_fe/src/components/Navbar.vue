@@ -11,6 +11,7 @@
     <ul>
       <li><a class="active" href="#">Inicio</a></li>
       <li><a @click="loadLogin">Log In</a></li>
+      <li><a @click="loadAdmin">Administrador</a></li>
       <li><a @click="loadSignup">Sign Up</a></li>
     </ul>
   </nav>
@@ -27,6 +28,9 @@ export default {
     loadLogin: function () {
       localStorage.setItem("pagUser", "old");
       this.$router.push({ name: "User" });
+    },
+    loadAdmin: function () {
+      this.$router.push({ name: "Administration" });
     },
     loadSignup: function () {
       localStorage.setItem("pagUser", "new");
