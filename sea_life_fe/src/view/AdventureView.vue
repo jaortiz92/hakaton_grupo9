@@ -57,41 +57,67 @@ export default {
 };
 </script>
 <style scoped>
-:root {
-  cursor: none;
-  --cursorX: 50vw;
-  --cursorY: 50vh;
-}
-.adventureView:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  pointer-events: none;
-  background: radial-gradient(
-    circle 12vmax at var(--cursorX) var(--cursorY),
-    /*diametro de la luz*/ rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.5) 80%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
-}
-#myVideo {
-  position: fixed;
-  z-index: -1;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  color: black;
+.container {
+  background: url("../assets/img/ranking.jpeg");
+  background-size: cover;
+  background-position: center center;
+  height: calc(90vh - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
+body {
+  font-family: papyrus;
+  color: deepskyblue;
+}
+form {
+  border: 3px solid orange;
+}
+
+input[type="text"],
+input[type="password"] {
   width: 100%;
-  padding: 20px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid orange;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: deepskyblue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: black;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
 }
 </style>

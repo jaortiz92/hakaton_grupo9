@@ -3,6 +3,7 @@
     <section class="banner">
       <div class="row"></div>
       <button @click="loadAdventure" class="btnServices">JUGAR</button>
+      <button @click="loadScore" class="btnServices">SCORES</button>
     </section>
   </div>
 </template>
@@ -18,6 +19,9 @@ export default {
   methods: {
     loadAdventure() {
       this.$router.push({ name: "Adventure" });
+    },
+    loadScore() {
+      this.$router.push({ name: "Ranking" });
     },
     updateLogin: function () {
       if (localStorage.getItem("isAuth") == "true") this.status = true;
@@ -46,7 +50,7 @@ li b:hover {
   display: none;
 }
 .banner {
-  background: url(../assets/img/fondo.jpeg);
+  background: url(../assets/img/fo.jpeg);
   background-size: cover;
   background-position: center center;
   height: calc(90vh - 10px);

@@ -6,11 +6,7 @@
         <hr />
         <div class="login-items">
           <form v-on:submit.prevent="logInUser">
-            <input
-              type="username"
-              v-model="user.username"
-              placeholder="Username"
-            />
+            <input type="text" v-model="user.username" placeholder="Username" />
             <br />
             <input
               type="password"
@@ -42,13 +38,9 @@ export default {
   methods: {
     logInUser: async function () {
       await axios
-        .post(
-          "https://hackaton-g9-mintic-auth-ms.herokuapp.com/login/",
-          this.user,
-          {
-            headers: {},
-          }
-        )
+        .post("https://sealife-auth.herokuapp.com/login/", this.user, {
+          headers: {},
+        })
         .then((result) => {
           let dataLogIn = {
             username: this.user.username,
@@ -66,5 +58,68 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
+.container {
+  background: url("../assets/img/ranking.jpeg");
+  background-size: cover;
+  background-position: center center;
+  height: calc(90vh - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body {
+  font-family: papyrus;
+  color: deepskyblue;
+}
+form {
+  border: 3px solid orange;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid orange;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: deepskyblue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: black;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
 </style>
