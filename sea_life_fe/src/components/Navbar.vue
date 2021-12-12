@@ -10,16 +10,32 @@
     </label>
     <ul>
       <li><a class="active" href="#">Inicio</a></li>
-      <li><a href="#">Log In</a></li>
+      <li><a @click="loadLogin">Log In</a></li>
     </ul>
   </nav>
 </template>
 <script>
 export default {
   name: "Navbar",
+  data: function () {
+    return {
+      status: false,
+    };
+  },
+  methods: {
+    loadLogin: function () {
+      this.$router.push({ name: "Login" });
+    },
+    updateLogin: function () {
+      if (localStorage.getItem("isAuth") == "true") this.status = true;
+    },
+  },
+  updated() {
+    this.updateLogin();
+  },
 };
 </script>
-<style scoped>
+<style>
 * {
   padding: 0;
   margin: 0;

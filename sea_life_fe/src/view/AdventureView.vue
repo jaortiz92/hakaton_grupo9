@@ -40,20 +40,19 @@ export default {
     PlayAdventure,
   },
   methods: {
-    loadPlay: function () {
+    loadPlay: function (value) {
       this.is_selecting = false;
       localStorage.setItem("game", value);
     },
     updateCursor: function (e) {
-      let x = e.clientX || e.touches.clientX;
-      let y = e.clientY || e.touches.clientY;
+      let x = e.clientX;
+      let y = e.clientY;
       document.documentElement.style.setProperty("--cursorX", x + "px");
       document.documentElement.style.setProperty("--cursorY", y + "px");
     },
   },
   created() {
     document.addEventListener("mousemove", this.updateCursor);
-    document.addEventListener("touchmove", this.updateCursor);
   },
 };
 </script>
