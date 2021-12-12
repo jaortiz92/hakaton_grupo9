@@ -102,8 +102,8 @@ img {
 article img {
   opacity: 0.01;
   padding: 80;
-  width: 70px; /*Ancho inicial*/
-  height: 70px;
+  width: 200px; /*Ancho inicial*/
+  height: 200px;
   padding: 40px;
   transition: width 3s, height 3s, transform 2s; /*Cambia el ancho inicial al ancho en hover*/
   z-index: 999;

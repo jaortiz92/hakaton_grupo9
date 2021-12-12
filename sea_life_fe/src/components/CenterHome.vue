@@ -10,10 +10,21 @@
 <script>
 export default {
   name: "Adventure",
+  data: function () {
+    return {
+      status: false,
+    };
+  },
   methods: {
     loadAdventure() {
       this.$router.push({ name: "Adventure" });
     },
+    updateLogin: function () {
+      if (localStorage.getItem("isAuth") == "true") this.status = true;
+    },
+  },
+  updated() {
+    this.updateLogin();
   },
 };
 </script>
