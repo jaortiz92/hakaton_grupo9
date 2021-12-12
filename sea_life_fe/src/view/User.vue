@@ -28,6 +28,7 @@ export default {
       localStorage.setItem("token_access", data.token_access);
       localStorage.setItem("token_refresh", data.token_refresh);
       alert("Autenticación Exitosa");
+      this.$router.push({ name: "Home" });
     },
     completedSignUp: function (data) {
       alert("Registro Exitoso");
